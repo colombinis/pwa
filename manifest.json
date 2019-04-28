@@ -6,8 +6,8 @@
     "theme_color": "red",
     "orientation": "portrait",
     "display": "standalone",
-    "start_url": "./pwa/?utm_source=web_app_manifest",
-    "scope": "./pwa/",
+    "start_url": "/pwa/?utm_source=web_app_manifest",
+    "scope": "/pwa/",
     "lang": "es-ES",
     "icons": [
         {
