@@ -1,0 +1,83 @@
+{
+    
+    "name": "SACsi, Soluciones Inteligentes",
+    "short_name": "SACsi",
+    "description": "Desarrollando experiencias en Magento y Wordpress. Sitios Web y Software a Medida.",
+    "background_color": "#f16529",
+    "theme_color": "red",
+    "orientation": "portrait",
+    "display": "standalone",   
+    "start_url": "./pwa/?utm_source=web_app_manifest",
+    "scope": "./pwa/",
+    "lang": "es-ES",        
+    "icons": [
+        {
+            "src": "./img/ico_44.png",
+            "sizes": "44x44"
+        },
+        {
+            "src": "./img/ico_48.png",
+            "sizes": "48x48"
+        },
+        {
+            "src": "./img/ico_300.png",
+            "sizes": "300x300"
+        },
+        {
+            "src": "./img/ico_150.png",
+            "sizes": "150x150"
+        },
+        {
+            "src": "./img/ico_88.png",
+            "sizes": "88x88"
+        },
+        {
+            "src": "./img/ico_24.png",
+            "sizes": "24x24"
+        },
+        {
+            "src": "./img/ico_50.png",
+            "sizes": "50x50"
+        },
+        {
+            "src": "./img/ico_192.png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "./img/ico_144.png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "./img/ico_96.png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "./img/ico_72.png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "./img/ico_36.png",
+            "sizes": "36x36"
+        },
+        {
+            "src": "./img/ico_1024.png",
+            "sizes": "1024x1024"
+        },
+        {
+            "src": "./img/ico_180.png",
+            "sizes": "180x180"
+        },
+        {
+            "src": "./img/ico_152.png",
+            "sizes": "152x152"
+        },
+        {
+            "src": "./img/ico_120.png",
+            "sizes": "120x120"
+        },
+        {
+            "src": "./img/ico_76.png",
+            "sizes": "76x76"
+        }
+    ]
+}
