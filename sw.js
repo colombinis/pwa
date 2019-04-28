@@ -29,29 +29,77 @@ self.addEventListener('activate', (e) => {
     const cacheWL = [CACHE_NAME];
     e.waitUntil(
         caches.keys()
-        .then((cacheNames)=>{
-            cacheNames.map(cN =>{
-                if(cacheWL.indexOf(cN) ===-1){
-                    return caches.delete(cN);
-                }
+            .then((cacheNames) => {
+                cacheNames.map(cN => {
+                    if (cacheWL.indexOf(cN) === -1) {
+                        return caches.delete(cN);
+                    }
+                })
             })
-        })
-        .then(() => {self.clients.claim()})
-        
+            .then(() => { self.clients.claim() })
+
     );
 
 });
 
 self.addEventListener('fetch', (e) => {
     //proxy 
-    console.log('sw-fetch', e);
+    console.log('sw-fetch', e.request.url, 'completo', e);
     e.respondWith(
         caches.match(e.request)
-        .then(res => {
-            if(res){
-                return res
-            }
-            return fetch(e.request); //hace el request mediante fetch
-        })
+            .then(res => {
+                if (res) {
+                    return res
+                }
+                return mycacheAcum(e.request); //hace el request mediante fetch
+            })
     );
 });
+
+function mycacheAcum(req) {
+    // return fetch(req);
+
+    // IMPORTANT: Clone the request. A request is a stream and
+    // can only be consumed once. Since we are consuming this
+    // once by cache and once by the browser for fetch, we need
+    // to clone the response.
+    var fetchRequest = req.clone();
+
+    return fetch(fetchRequest).then(
+        function (response) {
+            // Check if we received a valid response
+            if (!response || response.status !== 200 || response.type !== 'basic') {
+                return response;
+            }
+
+            // IMPORTANT: Clone the response. A response is a stream
+            // and because we want the browser to consume the response
+            // as well as the cache consuming the response, we need
+            // to clone it so we have two streams.
+            var responseToCache = response.clone();
+
+            caches.open(CACHE_NAME)
+                .then(function (cache) {
+                    cache.put(req, responseToCache);
+                });
+
+            return response;
+        }
+    );
+}
+
+/* push */
+
+self.addEventListener('push', function(event) {  
+    var title = 'Yay a message.';  
+    var body = 'We have received a push message.';  
+    var icon = '/images/smiley.svg';  
+    var tag = 'simple-push-example-tag';
+    event.waitUntil(  
+      self.registration.showNotification(title, {  
+        body: body,  
+        icon: icon,  
+        tag: tag  
+      })  
+    );  
+  });
