@@ -45,7 +45,7 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
     //proxy 
     console.log('sw-fetch', e);
-    e.responseWith(
+    e.respondWith(
         caches.match(e.request)
         .then(res => {
             if(res){
