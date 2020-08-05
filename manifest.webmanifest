@@ -4,17 +4,17 @@
     "description": "La descripcion de la pwa de seba",
     "icons": [
       {
-        "src": "./img/ico_192.png",
+        "src": "img/ico_192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "./img/ico_300.png",
+        "src": "img/ico_300.png",
         "type": "image/png",
         "sizes": "300x300"
       },
       {
-        "src": "./img/ico_1024.png",
+        "src": "img/ico_1024.png",
         "type": "image/png",
         "sizes": "1024x1024"
       }
@@ -30,14 +30,14 @@
         "short_name": "Today",
         "description": "View weather information for today",
         "url": "/today?source=pwa",
-        "icons": [{ "src": "./img/ico_192.png", "sizes": "192x192" }]
+        "icons": [{ "src": "img/ico_192.png", "sizes": "192x192" }]
       },
       {
         "name": "How's weather tomorrow?",
         "short_name": "Tomorrow",
         "description": "View weather information for tomorrow",
         "url": "/tomorrow?source=pwa",
-        "icons": [{ "src": "./img/ico_192.png", "sizes": "192x192" }]
+        "icons": [{ "src": "img/ico_192.png", "sizes": "192x192" }]
       }
     ]
   }
