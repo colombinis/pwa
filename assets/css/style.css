@@ -1,0 +1,31 @@
+body{
+    background-color: #cecece;
+    margin: 0;
+    padding:0;
+}
+
+.hidden{
+    display: none;
+}
+
+#my-list ul{
+    margin: 0;
+    padding:0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#my-list img{
+    width: 200px;
+}
+
+
+/*only for PWA*/
+
+@media all and (display-mode: standalone) {
+    body {
+      background-color: yellow;
+    }
+  }
